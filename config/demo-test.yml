@@ -1,0 +1,18 @@
+description: demo test config file of data10K
+
+model: [exp/DEMO/models/demo-1_step_0.pt, exp/DEMO/models/demo-2_step_0.pt]
+
+src: data/data10K/src-test.txt
+tgt: data/data10K/tgt-test.txt
+tmpl: data/data10K/tmpl-test.txt
+src2: exp/DEMO/src2-test.txt
+
+output: exp/DEMO/test_pred.txt
+log_file: exp/DEMO/test_pred.log
+shard_size: 10000
+
+replace_unk: true
+dynamic_dict: true
+beam_size: 5
+batch_size: 32
+gpu: 0

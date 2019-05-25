@@ -207,15 +207,3 @@ pyvenv.cfg
 pip-selfcheck.json
 
 .idea/
-eden.py
-/corenlp/
-/rdfdealer/raw/
-*.infobox
-*.dict
-cjjpy.py
-*.csv
-*.vocab
-backup/
-exp/
-*.yml
-/data/

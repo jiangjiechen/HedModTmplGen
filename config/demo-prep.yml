@@ -1,0 +1,31 @@
+description: demo preprocess config file of data10K
+
+# preprocess params
+train_src: data/data10K/src-train.txt
+train_tgt: data/data10K/tgt-train.txt
+train_src2: data/data10K/src2-train.txt
+train_tmpl: data/data10K/tmpl-train.txt
+
+valid_src: data/data10K/src-valid.txt
+valid_tgt: data/data10K/tgt-valid.txt
+valid_src2: data/data10K/src2-valid.txt
+valid_tmpl: data/data10K/tmpl-valid.txt
+
+test_src: data/data10K/src-test.txt
+test_tgt: data/data10K/tgt-test.txt
+test_tmpl: data/data10K/tmpl-test.txt
+
+
+save_data: exp/DEMO/data/DATA
+log_file: exp/DEMO/prep.log
+
+shard_size: 10000
+
+max_val_words_num: 20
+max_src_len: 200
+max_tgt_len: 60
+
+dynamic_dict: true
+src_vocab_size: 10000
+tgt_vocab_size: 10000
+seed: 1111

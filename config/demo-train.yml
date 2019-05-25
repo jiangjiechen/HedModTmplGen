@@ -1,0 +1,49 @@
+description: demo train config file of data10K
+
+# training params
+from_scratch: true
+
+data: exp/DEMO/data/DATA
+log_file: exp/DEMO/train.log
+save_model1: exp/DEMO/models/demo-1
+save_model2: exp/DEMO/models/demo-2
+
+batch_size: 32
+valid_batch_size: 32
+dropout: 0.1
+
+train_steps: 200000
+valid_steps: 5000
+report_every: 1000
+
+save_checkpoint_steps: 5000
+keep_checkpoint: 100
+
+# model params
+src_word_vec_size: 256
+tgt_word_vec_size: 256
+feat_vec_size: 128
+feat_merge: mlp
+enc_rnn_size: 256
+dec_rnn_size: 256
+enc_layers: 1
+dec_layers: 1
+
+# learning params
+optim: adam
+learning_rate: 0.001
+learning_rate_decay: 0.9
+start_decay_steps: 10000
+max_grad_norm: 2
+
+# model settings
+encoder_type: rnn
+decoder_type: rnn
+encoder2_type: brnn
+decoder2_type: rnn
+rnn_type: GRU
+bridge: true
+copy_attn: true
+
+world_size: 1
+gpu_ranks: [0]
