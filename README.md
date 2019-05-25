@@ -42,7 +42,7 @@ Download the processed dataset from [here](link), and place them in the `data/da
 
 #### More troublesome version
 
-Download the raw infobox data from [here](link), and run the following to convert raw infobox to sentences.
+Download the raw infobox data from [here](link), place them in the `raw/infobox/dataNK/`, and run the following to convert raw infobox to sentences.
 
 ```bash
 python build_dataset.py --config condig/demo-prep.yml
