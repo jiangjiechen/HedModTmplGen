@@ -1,33 +1,106 @@
-# ISA-NLG
+# HedModTmplGen
 
-## Environment
+Code for ACL 2019 long paper [Ensuring Readability and Data-fidelity using Head-modifier Templates in Deep Type Description Generation](http://arxiv.org) based on [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py).
 
-- StanfordCoreNLP
+## 1 Dependencies
+
+- Python 3.5+
+
+- PyTorch 1.0 
+
+```bash
+pip install -r requirements.txt
+```
+
+## 2 Template acquicision
+
+### 1) StanfordCoreNLP
+
+Download stanford corenlp from [here](https://github.com/Lynten/stanford-corenlp), and place them in the `corenlp/` folder.
+
+The start CoreNLP by running the following commands within the folder,
 
 ```bash
 java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000
 ```
 
-## Data Format
+### 2) Run a demo
 
-- `.infobox`: {qid \t {pid, DESC/TMPL_DESC, NAME} \t o{;o}* \n}+. 
-  - Typically raw `.infobox` file is composed of IDs. Sampled infobox are composed of strings.
-- `.dict`:  {id \t str \n}*
+Demo can be found in `raw/annotate_desc.py`
 
-## Preprocess:
+```bash
+python annotate_desc.py
+```
 
-- `python rdf2table.py`: extract infobox from rdf, multilingual supported
-- `python deunicode.py`: run this twice to deunicode
-- `python prop_dealer.py`: deal with properties dicts or sth.
-- `python wikidata_sample.py`: evenly sample dataset from raw infobox
-- `python dict_dealer.py pid.dict/qid.dict xx.infobox` : segment .dict, pid and qid alike
-- `python assemble.py`: assemble ids and dicts & annotate descriptions into templates
-- `python deunicode_desc.py`: deunicode descriptions and names. Twice. Jesus.
-- `python build_vocab.py`: build vocabulary for infobox into word\tcount.
+## 3 Quick start
 
-- `python build_dataset.py -config.xx_prep.yml`: convert raw infobox to sents.
-- `python preprocess.py --config config/xx_prep.yml`: opennmt style preprocess, separate w/ previous custom dataloading methods
+### 1) Dataset preparation
 
-## Train:
+#### Quick version
 
-- `python train.py --config config/xx.yml`: literally.
+Download the processed dataset from [here](link), and place them in the `data/dataNK/` folders.
+
+#### More troublesome version
+
+Download the raw infobox data from [here](link), and run the following to convert raw infobox to sentences.
+
+```bash
+python build_dataset.py --config condig/demo-prep.yml
+```
+
+It may take a while. :).
+
+### 2) Preprocess
+
+Preprocess dataset into *.pt. 
+
+```bash
+python preprocess.py --config config/demo-prep.yml
+```
+
+### 3) Train
+
+```bash
+python train.py --config config/demo-train.yml
+```
+
+### 4) Test
+
+```bash
+python test.py --config config/demo-test.yml
+```
+
+### 5) Evaluate
+
+#### a) BLEU, ROUGE, METEOR, CIDEr
+
+Simply add `-report_bleu` in test commands, or run
+
+```
+python evaluation.py $result_file$ $golden_file$
+```
+
+#### b) ModCopy, HedAcc
+
+Start Stanford CoreNLP, then in the folder `eval/`, run
+
+```bash
+python modcopy.py -src somewhere/src-test.txt -res result_file
+python hedacc.py -src somewhere/src-test.txt -tgt tgt-test.txt -res result_file
+```
+
+## 4 Citation
+
+If you find our code or paper useful to your research, please kindly cite our paper.
+
+```tex
+@inproceedings{chen2019template,
+	title={Ensuring Readability and Data-fidelity using Head-modifier Templates in Deep Type Description Generation},
+	author={Jiangjie Chen, Ao Wang, Haiyun Jiang, Suo Feng, Chenguang Li and Yanghua Xiao},
+	booktitle={ACL},
+	year={2019},
+}
+```
+
+
+
