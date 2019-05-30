@@ -1,6 +1,6 @@
 # HedModTmplGen
 
-Code for ACL 2019 long paper [Ensuring Readability and Data-fidelity using Head-modifier Templates in Deep Type Description Generation](http://arxiv.org) based on [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py).
+Code for ACL 2019 long paper [Ensuring Readability and Data-fidelity using Head-modifier Templates in Deep Type Description Generation](https://arxiv.org/abs/1905.12198) based on [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py).
 
 ## 1 Dependencies
 
@@ -38,11 +38,11 @@ python annotate_desc.py
 
 #### Quick version
 
-Download the processed dataset from [here](link), and place them in the `data/dataNK/` folders.
+Download the processed dataset from [here](https://drive.google.com/drive/folders/1ZHGjawYcV1BJ9SWtyhMZzR3WkX3BApOI?usp=sharing), and place them in the `data/dataNK/` folders.
 
 #### More troublesome version
 
-Download the raw infobox data from [here](link), place them in the `raw/infobox/dataNK/`, and run the following to convert raw infobox to sentences.
+Download the raw infobox data from [here](https://drive.google.com/drive/folders/1dcG3ylVxdXZ4T27G1F3qWEb-wm69AyBE?usp=sharing), place them in the `raw/infobox/dataNK/`, and run the following to convert raw infobox to sentences.
 
 ```bash
 python build_dataset.py --config condig/demo-prep.yml
@@ -93,14 +93,7 @@ python hedacc.py -src somewhere/src-test.txt -tgt tgt-test.txt -res result_file
 
 If you find our code or paper useful to your research, please kindly cite our paper.
 
-```tex
-@inproceedings{chen2019template,
-	title={Ensuring Readability and Data-fidelity using Head-modifier Templates in Deep Type Description Generation},
-	author={Jiangjie Chen, Ao Wang, Haiyun Jiang, Suo Feng, Chenguang Li and Yanghua Xiao},
-	booktitle={ACL},
-	year={2019},
-}
-```
+TODO
 
 
 
