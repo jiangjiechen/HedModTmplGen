@@ -94,10 +94,10 @@ python hedacc.py -src somewhere/src-test.txt -tgt tgt-test.txt -res result_file
 If you find our code or paper useful to your research, please kindly cite our paper.
 
 ```tex
-@inproceedings{chen2019ensuring,
+@article{chen2019ensuring,
   title={Ensuring Readability and Data-fidelity using Head-modifier Templates in Deep Type Description Generation},
   author={Chen, Jiangjie and Wang, Ao and Jiang, Haiyun and Feng, Suo and Li, Chenguang and Xiao, Yanghua},
-  booktitle={ACL},
+  journal={arXiv preprint arXiv:1905.12198},
   year={2019}
 }
 ```
