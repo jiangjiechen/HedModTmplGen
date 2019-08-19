@@ -1,6 +1,6 @@
 # HedModTmplGen
 
-Code for ACL 2019 long paper [Ensuring Readability and Data-fidelity using Head-modifier Templates in Deep Type Description Generation](https://arxiv.org/abs/1905.12198) based on [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py).
+Code for ACL 2019 long paper [Ensuring Readability and Data-fidelity using Head-modifier Templates in Deep Type Description Generation](https://www.aclweb.org/anthology/P19-1196) based on [OpenNMT-py](https://github.com/OpenNMT/OpenNMT-py).
 
 ## 1 Dependencies
 
