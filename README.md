@@ -45,7 +45,7 @@ Download the processed dataset from [here](https://drive.google.com/drive/folder
 Download the raw infobox data from [here](https://drive.google.com/drive/folders/1dcG3ylVxdXZ4T27G1F3qWEb-wm69AyBE?usp=sharing), place them in the `raw/infobox/dataNK/`, and run the following to convert raw infobox to sentences.
 
 ```bash
-python build_dataset.py --config condig/demo-prep.yml
+python build_dataset.py --config config/demo-prep.yml
 ```
 
 It may take a while. :).
