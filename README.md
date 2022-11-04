@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 ### 1) StanfordCoreNLP
 
-Download stanford corenlp from [here](https://github.com/Lynten/stanford-corenlp), and place them in the `corenlp/` folder.
+Download stanford corenlp from [here](http://nlp.stanford.edu/software/stanford-corenlp-full-2017-06-09.zip), and place them in the `corenlp/` folder.
 
 The start CoreNLP by running the following commands within the folder,
 
